@@ -1,7 +1,7 @@
 import './App.css';
+import './style.css';
 import saveAs from 'file-saver';
 import { useState } from 'react';
-import style from './style.css';
 
 function App() {
   const [template, setTemplate] = useState('oag');
@@ -10,7 +10,7 @@ function App() {
 
   const memeUrl = `https://api.memegen.link/images/${template}/${topText}/${bottomText}.jpg`;
   function fileSaver() {
-    saveAs(`${memeUrl}`, 'saved meme.jpg');
+    saveAs(memeUrl, 'saved meme.jpg');
   }
   return (
     <div>
@@ -20,7 +20,7 @@ function App() {
 
       <div>
         <label>
-          Top text{''}
+          Top text
           <input
             value={topText}
             onChange={(event) => {
@@ -30,7 +30,7 @@ function App() {
         </label>
       </div>
       <label>
-        Bottom text{''}
+        Bottom text
         <input
           value={bottomText}
           onChange={(event) => {
@@ -41,7 +41,7 @@ function App() {
 
       <div>
         <label>
-          Choose meme template{''}
+          Choose meme template
           <input
             value={template}
             onChange={(event) => {
