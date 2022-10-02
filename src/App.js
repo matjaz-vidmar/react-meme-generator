@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 function App() {
   const [template, setTemplate] = useState('oag');
-  const [topText, setTopText] = useState('meme-me');
-  const [bottomText, setBottomText] = useState('daddy');
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
 
   const memeUrl = `https://api.memegen.link/images/${template}/${topText}/${bottomText}.jpg`;
   function fileSaver() {
@@ -41,7 +41,7 @@ function App() {
 
       <div>
         <label>
-          Choose meme template
+          Choose Meme template
           <input
             value={template}
             onChange={(event) => {
