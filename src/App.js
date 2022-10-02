@@ -5,13 +5,14 @@ import { useState } from 'react';
 
 function App() {
   const [template, setTemplate] = useState('oag');
-  const [topText, setTopText] = useState('');
-  const [bottomText, setBottomText] = useState('');
+  const [topText, setTopText] = useState('_');
+  const [bottomText, setBottomText] = useState('_');
 
   const memeUrl = `https://api.memegen.link/images/${template}/${topText}/${bottomText}.jpg`;
   function fileSaver() {
     saveAs(memeUrl, 'saved meme.jpg');
   }
+
   return (
     <div>
       <div>
@@ -61,7 +62,12 @@ function App() {
           <li>type 'grumpycat' for Grumpy Cat</li>
         </ul>
       </div>
-      <img src={memeUrl} alt="meme" data-test-id="meme-image" />
+      <img
+        placeholder="https://api.memegen.link/images/oag/meme-me/daddy.jpg"
+        src={memeUrl}
+        alt="meme"
+        data-test-id="meme-image"
+      />
 
       <div>
         <button onClick={fileSaver}>Download meme</button>
